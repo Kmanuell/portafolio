@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Marquee from '../components/Marquee.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Tools from '../components/Tools.astro';
+import ProyectosGrid from '../components/ProyectosGrid.astro';
+import CTA from '../components/CTA.astro';
+
+const title = 'Kessel Manuel Ibarra · Frontend Developer';
+const description = 'Portafolio con Astro + Tailwind. Rendimiento, SEO técnico y diseño limpio.';
+---
+<Base {title} {description}>
+  <Navbar />
+  <Hero />
+  <Marquee />
+  <Services />
+  <About />
+  <Tools />
+  <ProyectosGrid />
+  <CTA />
+</Base>

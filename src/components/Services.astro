@@ -1,0 +1,26 @@
+---
+const cards = [
+  { title: "UI/UX Design", desc: "Diseño enfocado en conversión, accesibilidad y claridad." },
+  { title: "Application Design", desc: "Interfaces para apps con estados y flujos complejos." },
+  { title: "Website Design", desc: "Landings rápidas con Astro + Tailwind + SEO técnico." },
+];
+---
+<section id="servicios" class="section">
+  <div class="container">
+    <h2 class="section-title text-3xl md:text-4xl font-bold mb-8" data-watermark="SERVICES">
+      Services I Provide
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {cards.map((c) => (
+        <div class="card p-6">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(50,255,58,0.12); border:1px solid rgba(50,255,58,0.35);">
+            <span class="text-sm font-bold" style="color:var(--color-primary)">★</span>
+          </div>
+          <h3 class="text-xl font-semibold">{c.title}</h3>
+          <p class="mt-2 text-[color:var(--color-muted)]">{c.desc}</p>
+          <a href="#contacto" class="mt-4 inline-block underline">Learn more</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+const items = ["Web Design","App Design","Dashboard","Wireframe","UI Kits","Prototyping"];
+---
+<section class="py-4 border-y border-[color:var(--color-border)] bg-[#0c0c0c]">
+  <div class="overflow-hidden">
+    <div class="animate-[marquee_20s_linear_infinite] whitespace-nowrap">
+      {items.map((it) => (
+        <span class="mx-6 inline-flex items-center gap-3 text-sm font-medium" style="color:var(--color-bg); background:var(--color-primary); padding:8px 14px; border-radius:9999px;">
+          {it}
+        </span>
+      ))}
+      <!-- duplicate for seamless loop -->
+      {items.map((it) => (
+        <span class="mx-6 inline-flex items-center gap-3 text-sm font-medium" style="color:var(--color-bg); background:var(--color-primary); padding:8px 14px; border-radius:9999px;">
+          {it}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+</style>

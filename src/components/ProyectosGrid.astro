@@ -1,0 +1,24 @@
+---
+import ProyectoCard from './ProyectoCard.astro';
+import { getCollection } from 'astro:content';
+
+const proyectos = (await getCollection('proyectos'))
+  .sort((a,b) => (a.data.featured === b.data.featured) ? 0 : a.data.featured ? -1 : 1)
+  .slice(0, 6);
+---
+<section id="proyectos" class="section">
+  <div class="container">
+    <div class="mb-8 flex items-end justify-between">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold">Proyectos</h2>
+        <p class="text-neutral-600">Problema → solución → resultado. KPI clave en cada caso.</p>
+      </div>
+      <a href="/proyectos" class="hidden md:inline-block underline">Ver todos</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {proyectos.map(({ data }) => (
+        <ProyectoCard title={data.title} excerpt={data.excerpt} cover={data.cover} kpi={data.kpi} url={data.url} stack={data.stack} />
+      ))}
+    </div>
+  </div>
+</section>

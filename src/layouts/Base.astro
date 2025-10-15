@@ -1,0 +1,15 @@
+---
+import SEO from '../components/SEO.astro';
+const { title = 'Portafolio · Tu Nombre', description = 'Creo sitios rápidos, con SEO y diseño limpio.' } = Astro.props;
+---
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <SEO {title} {description} />
+    <link rel="stylesheet" href="/src/styles/global.css">
+  </head>
+  <body class="font-sans bg-[color:var(--color-bg)] text-[color:var(--color-text)] antialiased">
+    <slot />
+  </body>
+</html>

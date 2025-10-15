@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const proyectos = await getCollection('proyectos');
+---
+<Base title="Proyectos · Portafolio" description="Casos con resultados medibles.">
+  <section class="section">
+    <div class="container grid md:grid-cols-3 gap-6">
+      {proyectos.map(({ data }) => (
+        <a href={data.url ?? '#'} class="card p-4">
+          {data.cover && <img src={data.cover} alt={data.title} class="rounded-xl w-full h-48 object-cover" loading="lazy" />}
+          <h3 class="mt-4 text-lg font-semibold">{data.title}</h3>
+          {data.kpi && <p class="kpi mt-1">{data.kpi}</p>}
+          <p class="text-neutral-600">{data.excerpt}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

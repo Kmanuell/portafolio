@@ -1,0 +1,64 @@
+@import "@fontsource-variable/inter";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card { @apply rounded-2xl shadow-sm border border-black/5 bg-white; }
+.section { @apply py-16 md:py-24; }
+.kpi { @apply text-2xl font-semibold; }
+
+
+/* Palette derived from uploaded image */
+:root {
+  --color-primary: #080808;
+  --color-accent: #c8c8c8;
+  --color-bg: #040404;
+  --color-text: #ffffff;
+  --color-muted: #9a9a9a;
+}
+
+body { background: var(--color-bg); color: var(--color-text); }
+.card { @apply bg-white/5 border-white/10 backdrop-blur; }
+a { color: var(--color-primary); }
+.btn-primary { @apply px-5 py-3 rounded-xl text-black; background: var(--color-primary); }
+.btn-ghost { @apply px-5 py-3 rounded-xl border; }
+.text-muted { color: var(--color-muted); }
+
+
+/* === Dark Theme Tokens === */
+:root {
+  --color-primary: #32ff3a;
+  --color-bg: #0a0a0a;
+  --color-surface: #111111;
+  --color-border: #1a1a1a;
+  --color-text: #ffffff;
+  --color-muted: #9aa0a6;
+}
+
+body { background: var(--color-bg); color: var(--color-text); }
+
+.card { @apply rounded-2xl shadow-sm border; border-color: var(--color-border); background: var(--color-surface); }
+.pill { @apply px-3 py-1 rounded-full text-xs font-medium; background: rgba(50,255,58,0.12); border: 1px solid rgba(50,255,58,0.35); color: var(--color-text); }
+.btn-primary { @apply px-5 py-3 rounded-xl font-semibold; background: var(--color-primary); color: #0a0a0a; }
+.btn-ghost { @apply px-5 py-3 rounded-xl border; border-color: var(--color-border); }
+.badge { @apply px-2 py-1 rounded-full text-xs border; border-color: var(--color-border); background: #0d0d0d; }
+
+/* Checkerboard background on hero */
+.hero-grid { 
+  background-image: linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px), 
+                    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Section headings with subtle watermark */
+.section-title { position: relative; }
+.section-title::after {
+  content: attr(data-watermark);
+  position: absolute;
+  left: 0; top: -1.5rem;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 1;
+  color: rgba(255,255,255,0.02);
+  pointer-events: none;
+}

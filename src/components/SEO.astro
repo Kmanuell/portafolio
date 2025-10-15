@@ -1,0 +1,43 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  url?: string;
+  image?: string;
+}
+const { title, description, url = Astro.site?.toString(), image = '/images/palette.jpg' } = Astro.props;
+const siteName = 'Tu Nombre · Portafolio';
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kessel Manuel Ibarra",
+  "url": url,
+  "jobTitle": "Desarrollador Frontend",
+  "image": image,
+  "sameAs": [
+    "https://www.linkedin.com/in/kessel-ibarra/",
+    "https://chatgpt.com/c/68f01a96-45b4-832a-b926-8c373b49b7e1"
+  ]
+};
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content={title} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<script type="application/ld+json">
+  {JSON.stringify(jsonLd)}
+</script>
