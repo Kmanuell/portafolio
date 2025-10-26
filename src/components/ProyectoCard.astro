@@ -7,14 +7,14 @@ const { title, excerpt, cover, kpi, url, stack = [] } = Astro.props;
 <article class="card overflow-hidden">
   {cover && <img src={cover} alt={title} class="w-full h-56 object-cover" loading="lazy" />}
   <div class="p-6">
-    <h3 class="text-xl font-semibold">{title}</h3>
-    {kpi && <p class="mt-1 kpi">{kpi}</p>}
+    <h3 class="text-xs font-light">{kpi}</h3>
+    {kpi && <p class="mt-1 kpi">{title}</p>}
     <p class="mt-2 text-neutral-600">{excerpt}</p>
     {stack.length > 0 && (
       <ul class="mt-3 flex flex-wrap gap-2 text-xs text-neutral-500">
         {stack.map((s) => <li class="px-2 py-1 rounded-full border">{s}</li>)}
       </ul>
     )}
-    {url && <a href={url} target="_blank" class="mt-4 inline-block underline">Visitar</a>}
+    {url && <a href={url} target="_blank" class="mt-4 inline-block underline">Go to page</a>}
   </div>
 </article>

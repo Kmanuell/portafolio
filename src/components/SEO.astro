@@ -5,8 +5,8 @@ export interface Props {
   url?: string;
   image?: string;
 }
-const { title, description, url = Astro.site?.toString(), image = '/images/palette.jpg' } = Astro.props;
-const siteName = 'Tu Nombre · Portafolio';
+const { title, description, url = Astro.site?.toString(), image = '/images/me.jpg' } = Astro.props;
+const siteName = 'Kessel ibarra · Portafolio';
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const jsonLd = {
   "@context": "https://schema.org",

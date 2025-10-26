@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://tudominio.com',
+  site: 'https://portafolio-livid-six-71.vercel.app/',
   integrations: [mdx(), tailwind({ applyBaseStyles: false }), sitemap()],
   markdown: { remarkPlugins: [], rehypePlugins: [] },
 });

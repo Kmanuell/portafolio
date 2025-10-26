@@ -39,4 +39,4 @@ vercel
   "muted": "#9a9a9a"
 }
 ```
-Se generó `public/images/palette.jpg` desde tu imagen de referencia.
+

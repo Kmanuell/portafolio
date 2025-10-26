@@ -1,6 +1,7 @@
 ---
 import SEO from '../components/SEO.astro';
 import '../styles/global.css'; 
+import MiIcono from '../public/images/rapido.svg';
 const { title = 'Portafolio · Tu Nombre', description = 'Creo sitios rápidos, con SEO y diseño limpio.' } = Astro.props;
 ---
 <html lang="es" class="scroll-smooth">
@@ -8,6 +9,7 @@ const { title = 'Portafolio · Tu Nombre', description = 'Creo sitios rápidos, 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <SEO {title} {description} />
+    <link rel="icon" href="public/images/favico.png" type="image/x-icon" />
   </head>
   <body class="font-sans bg-[color:var(--color-bg)] text-[color:var(--color-text)] antialiased">
     <slot />
